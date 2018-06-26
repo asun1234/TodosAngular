@@ -6,9 +6,18 @@
    Hide Completed Tasks
  </label>
 
-  <form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)">
-    <input ng-model="$ctrl.newTask" type="text"
-    name="text" placeholder="Type to add new tasks"/>
+ <form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)">
+    <label for="uname">New Task: </label>
+   <input ng-model="$ctrl.newTask" type="text"
+   name="text" placeholder="Type to add new tasks" required/>
+   <span class="validity"></span>
+ </form>
+
+  <form class="new-task" ng-submit="$ctrl.addTask($ctrl.newDescription)">
+     <label for="uname">New Description: </label>
+    <input ng-model="$ctrl.newDescription" type="note"
+    name="note" placeholder="Type to add new description" required/>
+    <span class="validity"></span>
   </form>
 
 </header>
@@ -21,7 +30,7 @@
     ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
 
     <span class="text">
-      Submitted at {{task.times}}: {{task.text}}
+      Submitted {{task.times}}: {{task.text}} ({{task.note}})
     </span>
   </li>
 </ul>

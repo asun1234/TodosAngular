@@ -1,5 +1,5 @@
 body {
-    font-family: inherit;
+    font-family: monospace;
     background-color: #315481;
     background-image: linear-gradient(to bottom, #315481, #918e82 100%);
     background-attachment: fixed;
@@ -35,7 +35,7 @@ header {
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0;
     margin-bottom: 10px;
     display: inline-block;
