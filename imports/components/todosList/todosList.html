@@ -6,17 +6,18 @@
    Hide Completed Tasks
  </label>
 
+     <form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)"
+     ng-show="$ctrl.currentUser">
+      <input ng-model="$ctrl.newTask" type="text"
+      name="text" placeholder="Type to add new tasks"/>
+    </form>
+    
  <login-buttons></login-buttons>
-
-   <form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)"
-   ng-show="$ctrl.currentUser">
-    <input ng-model="$ctrl.newTask" type="text"
-    name="text" placeholder="Type to add new tasks"/>
-  </form>
 
 </header>
 
 <ul>
+
   <li ng-repeat="task in $ctrl.tasks"
   ng-class="{'checked': task.checked, 'private': task.private}">
     <button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button>
@@ -28,8 +29,5 @@
       <strong>{{task.username}}</strong> - {{task.text}}
     </span>
 
-    <button class="toggle-private" ng-click="$ctrl.setPrivate(task)" ng-show="task.owner === $ctrl.currentUser._id">
-      {{task.private == true ? "Private" : "Public"}}
-    </button>
   </li>
 </ul>
