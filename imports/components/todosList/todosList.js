@@ -42,7 +42,7 @@ class TodosListCtrl {
     // Insert a task into the collection
     Tasks.insert({
       text: newTask,
-      createdAt: new Date(),
+      times : new Date().toLocaleTimeString(),
       note: newDescription,
     });
 
