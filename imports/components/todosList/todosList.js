@@ -38,15 +38,17 @@ class TodosListCtrl {
     })
   }
 
-  addTask(newTask) {
+  addTask(newTask, newDescription) {
     // Insert a task into the collection
     Tasks.insert({
       text: newTask,
-      createdAt: new Date
+      createdAt: new Date(),
+      note: newDescription,
     });
 
     // Clear form
     this.newTask = '';
+    this.newDescription = '';
   }
 
 
